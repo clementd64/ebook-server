@@ -26,8 +26,8 @@
                 {{- range $ebook := $ebooks }}
                 <tr>
                     <td width="80%">{{ .Title }}</td>
-                    <td width="10%"><a href="/download/{{ index $ebook.Identifier 0 }}/{{ $ebook.Slug }}.epub">EPUB</a></td>
-                    <td width="10%"><a href="/download/{{ index $ebook.Identifier 0 }}/{{ $ebook.Slug }}.azw">AZW</a></td>
+                    <td width="10%"><a href="download/{{ index $ebook.Identifier 0 }}/{{ $ebook.Slug }}.epub">EPUB</a></td>
+                    <td width="10%"><a href="download/{{ index $ebook.Identifier 0 }}/{{ $ebook.Slug }}.azw">AZW</a></td>
                 </tr>
                 {{- end }}
             </tbody>
