@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . .
 RUN go build -o main .
 
-FROM debian:11
+FROM python:3.10-bullseye
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends libgl1 xz-utils \
