@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ebook Server</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                font-size: 1.2rem;
+                margin: 1.5rem;
+            }
+
+            table {
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Ebook Server</h1>
+
+        {{- range $series, $ebooks := .Category }}
+        <hr>
+        <h2>{{ $series }}</h2>
+        <table>
+            <tbody>
+                {{- range $ebook := $ebooks }}
+                <tr>
+                    <td width="80%">{{ .Title }}</td>
+                    <td width="10%"><a href="/download/{{ index $ebook.Identifier 0 }}/{{ $ebook.Slug }}.epub">EPUB</a></td>
+                    <td width="10%"><a href="/download/{{ index $ebook.Identifier 0 }}/{{ $ebook.Slug }}.azw">AZW</a></td>
+                </tr>
+                {{- end }}
+            </tbody>
+        </table>
+        {{- end }}
+    </body>
+</html>
